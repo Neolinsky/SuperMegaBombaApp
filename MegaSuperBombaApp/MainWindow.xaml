@@ -1,0 +1,132 @@
+﻿<Window x:Class="MegaSuperBombaApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MegaSuperBombaApp"
+        mc:Ignorable="d"
+       WindowStyle="None"
+        ResizeMode="CanResizeWithGrip"
+        MouseDown="Window_MouseDown"
+        Title="SuperMegaBombaApp" Height="500" Width="350">
+    
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="6*"  />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+
+
+        <TextBox Grid.Row="1" Text="hey" HorizontalAlignment="right"
+                 VerticalAlignment="Bottom"
+                 FontSize="30" BorderThickness="0"> </TextBox>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="1" Background="Transparent"
+                     BorderThickness="0" Name="btnMinimize"
+                    Click="btnMinimize_Click" >
+                <StackPanel>
+                    <Image Source="C:\Users\User\source\repos\MegaSuperBombaApp\MegaSuperBombaApp\Assets\Minimize.png"  
+                           Visibility="Visible"/>
+                </StackPanel></Button>
+
+            <Button Grid.Column="2"  Background="Transparent"
+                    BorderThickness="0" Name="btnfullScreen"
+                    Click="btnfullScreen_Click">
+                <StackPanel>
+                    <Image Source="C:\Users\User\source\repos\MegaSuperBombaApp\MegaSuperBombaApp\Assets\FullScreen.png" Visibility="Visible"></Image>
+                </StackPanel>
+            </Button>
+
+            <Button Grid.Column="3" Background="Transparent"
+                    Name="btnClose" Click="btnClose_Click"
+                    BorderThickness="0">
+                <StackPanel>
+                    <Image Source="C:\Users\User\source\repos\MegaSuperBombaApp\MegaSuperBombaApp\Assets\close.png"/>
+                </StackPanel>
+            </Button>
+                    
+
+        </Grid>
+
+        <Grid Grid.Row="2">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="0" Name="btn1" 
+                    Click="btn1_Click" FontSize="20" Content="1"/>
+            
+            <Button Grid.Column="1" Name="btn2" Content="2" 
+                    Click="btn2_Click" FontSize="20"/>
+
+            <Button Grid.Column="2" Name="btn3" Content="3" 
+                    Click="btn3_Click" FontSize="20"/>
+
+            <Button Grid.Column="3" Name="btnDevision" Content="/" 
+                    Click="btnDevision_Click" FontSize="20"/>
+
+            <Button Grid.Row="1" Content="4" Name="btn4"
+                    FontSize="20" Click="btn4_Click"/>
+
+            <Button Grid.Row="1" Grid.Column="1" Content="5"
+                    FontSize="20" Name="btn5" Click="btn5_Click"/>
+
+            <Button Grid.Row="1" Grid.Column="2" Name="btn6" 
+                    Content="6" FontSize="20" Click="btn6_Click"/>
+
+            <Button Grid.Row="1" Grid.Column="3" Name="btnMultiply"
+                    Content="*" FontSize="20" Click="btnMultiply_Click"/>
+
+            <Button Grid.Row="2" Content="7" FontFamily="20"
+                    Name="btn7" FontSize="20" Click="btn7_Click"/>
+
+            <Button Grid.Row="2" Grid.Column="1" Content="8"
+                    Name="btn8" Click="btn8_Click" FontSize="20"/>
+
+            <Button Grid.Row="2" Grid.Column="2" Content="9"
+                    Name="btn9" Click="btn9_Click" FontSize="20"/>
+
+            <Button Grid.Row="2" Grid.Column="3" Name="btnPlus"
+                    Click="btnPlus_Click" Content="+" FontSize="20"/>
+
+            <Button Grid.Row="3" Content="." Name="btnDote" 
+                    Click="btnDote_Click" FontSize="20"/>
+
+            <Button Grid.Column="1" Grid.Row="3" Name="btn0"
+                    Click="btn0_Click" Content="0" FontSize="20"/>
+
+            <Button Grid.Column="2" Grid.Row="3" Name="btnEqual"
+                    Click="btnEqual_Click" Content="=" FontSize="20"/>
+
+            <Button Grid.Column="3" Grid.Row="3" Name="btnMinus" 
+                    Click="btnMinus_Click" Content="-" FontSize="20"/>
+
+
+        </Grid>
+
+        
+
+    </Grid>
+    
+    
+</Window>
