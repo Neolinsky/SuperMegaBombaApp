@@ -38,6 +38,8 @@ namespace MegaSuperBombaApp
 
         char lastOperation;
 
+        bool beenUsedDote = false;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -126,12 +128,14 @@ namespace MegaSuperBombaApp
                     beenDoneOperations = true;
                     value = "";
                     lastOperation = '/';
+                    beenUsedDote = false;
                 }
                 else
                 {
 
                     lastOperation = '/';
                     value = "";
+                    beenUsedDote = false;
                 }
             }
         }
@@ -214,12 +218,14 @@ namespace MegaSuperBombaApp
                     beenDoneOperations = true;
                     value = "";
                     lastOperation = '*';
+                    beenUsedDote = false;
                 }
                 else
                 {
 
                     lastOperation = '*';
                     value = "";
+                    beenUsedDote = false;
                 }
             }
         }
@@ -300,12 +306,16 @@ namespace MegaSuperBombaApp
                     beenDoneOperations = true;
                     value = "";
                     lastOperation = '+';
+                    beenUsedDote = false;
+
                 }
                 else
                 {
                    
                     lastOperation = '+';
                     value = "";
+                    beenUsedDote = false;
+
                 }
             }
         }
@@ -315,8 +325,16 @@ namespace MegaSuperBombaApp
             if (beenPressedAnyButton != false)
             {
               
+                if(beenUsedDote == false)
+                {
                     value = value + ".";
                     TextNumbers.Text = value;
+                    beenUsedDote = true;
+                }
+                else
+                {
+
+                }
                 
                
             }
@@ -355,18 +373,24 @@ namespace MegaSuperBombaApp
                     currentNumber = Double.Parse(value);
                     result = result + currentNumber;
                     TextNumbers.Text = result.ToString();
+                    beenUsedDote = false;
+
                     break;
 
                 case '-':
                     currentNumber = Double.Parse(value);
                     result = result - currentNumber;
                     TextNumbers.Text = result.ToString();
+                    beenUsedDote = false;
+
                     break;
 
                 case '*':
                     currentNumber = Double.Parse(value);
                     result = result * currentNumber;
                     TextNumbers.Text = result.ToString();
+                    beenUsedDote = false;
+
                     break;
 
                 case '/':
@@ -375,6 +399,8 @@ namespace MegaSuperBombaApp
                     {
                         result = result / currentNumber;
                         TextNumbers.Text = result.ToString();
+                        beenUsedDote = false;
+
                         break;
                     }
                     else
@@ -383,8 +409,13 @@ namespace MegaSuperBombaApp
                         value = "";
                         TextNumbers.Text = "Input another value!";
                         beenPressedAnyButton = false;
+                        beenUsedDote = false;
+
                     }
                     break;
+
+                    beenUsedDote = false;
+
 
             }
         }
